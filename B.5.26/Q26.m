@@ -1,5 +1,3 @@
-clc;
-clear;
 
 % Parâmetros do sistema (exemplo)
 K = 2;   % Coeficiente do termo Ks na FT de malha fechada
