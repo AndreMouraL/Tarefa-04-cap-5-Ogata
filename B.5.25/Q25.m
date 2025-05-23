@@ -13,13 +13,11 @@ A = [0  1  0;
 coeffs = [1, b1, b2 + b3, b1*b3]; % [s^3, s^2, s^1, s^0]
 
 % Construir a tabela de Routh manualmente
-% Para uma equação cúbica: a3*s^3 + a2*s^2 + a1*s + a0 = 0
 a3 = coeffs(1); % = 1
 a2 = coeffs(2); % = b1
 a1 = coeffs(3); % = b2 + b3
 a0 = coeffs(4); % = b1*b3
 
-% Tabela de Routh
 routh_table = [
     a3      a1      0;
     a2      a0      0;
@@ -45,3 +43,12 @@ if isequal(first_column, expected_column)
 else
     disp('A primeira coluna não corresponde ao esperado.');
 end
+
+% Plotando o gráfico da primeira coluna da Tabela de Routh
+figure;
+stem(0:length(first_column)-1, first_column, 'filled');
+title('Primeira Coluna da Tabela de Routh');
+xlabel('Ordem do Termo (s^n)');
+ylabel('Coeficiente');
+xticks(0:length(first_column)-1);
+grid on;
